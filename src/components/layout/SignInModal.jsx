@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Lock, Mail, Loader2, CheckCircle } from 'lucide-react';
+import { X, Lock, Mail, User as UserIcon, Loader2, CheckCircle } from 'lucide-react';
 
 const SignInModal = ({ isOpen, onClose }) => {
+  const [mode, setMode] = useState('signin'); // 'signin' or 'signup'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -16,9 +17,15 @@ const SignInModal = ({ isOpen, onClose }) => {
       setIsSuccess(true);
       setTimeout(() => {
         setIsSuccess(false);
+        setMode('signin'); // reset back to signin for next time
         onClose();
       }, 2000);
     }, 1500);
+  };
+
+  const toggleMode = (e) => {
+    e.preventDefault();
+    setMode(mode === 'signin' ? 'signup' : 'signin');
   };
 
   return createPortal(
@@ -36,8 +43,14 @@ const SignInModal = ({ isOpen, onClose }) => {
         
         <div className="p-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white mb-2">Welcome Back</h2>
-            <p className="text-gray-400">Sign in to access your exclusive portfolio.</p>
+            <h2 className="text-2xl font-bold text-white mb-2">
+              {mode === 'signin' ? 'Welcome Back' : 'Create an Account'}
+            </h2>
+            <p className="text-gray-400">
+              {mode === 'signin' 
+                ? 'Sign in to access your exclusive portfolio.' 
+                : 'Join our elite network of luxury real estate.'}
+            </p>
           </div>
           
           {isSuccess ? (
@@ -45,11 +58,27 @@ const SignInModal = ({ isOpen, onClose }) => {
               <div className="w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center">
                 <CheckCircle className="w-8 h-8 text-teal-500" />
               </div>
-              <h3 className="text-xl font-bold text-white">Authentication Successful</h3>
-              <p className="text-gray-400">Loading your dashboard...</p>
+              <h3 className="text-xl font-bold text-white">
+                {mode === 'signin' ? 'Authentication Successful' : 'Account Created!'}
+              </h3>
+              <p className="text-gray-400">
+                {mode === 'signin' ? 'Loading your dashboard...' : 'Logging you in...'}
+              </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
+              {mode === 'signup' && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <UserIcon className="h-5 w-5 text-gray-500" />
+                    </div>
+                    <input required type="text" className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" placeholder="John Doe" />
+                  </div>
+                </div>
+              )}
+
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
                 <div className="relative">
@@ -63,7 +92,9 @@ const SignInModal = ({ isOpen, onClose }) => {
               <div>
                 <div className="flex justify-between mb-2">
                   <label className="block text-sm font-medium text-gray-400">Password</label>
-                  <a href="#" className="text-sm font-medium text-teal-500 hover:text-teal-400">Forgot password?</a>
+                  {mode === 'signin' && (
+                    <a href="#" className="text-sm font-medium text-teal-500 hover:text-teal-400">Forgot password?</a>
+                  )}
                 </div>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -72,6 +103,18 @@ const SignInModal = ({ isOpen, onClose }) => {
                   <input required type="password" className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" placeholder="••••••••" />
                 </div>
               </div>
+
+              {mode === 'signup' && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Confirm Password</label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <Lock className="h-5 w-5 text-gray-500" />
+                    </div>
+                    <input required type="password" className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" placeholder="••••••••" />
+                  </div>
+                </div>
+              )}
               
               <button 
                 disabled={isSubmitting}
@@ -80,12 +123,16 @@ const SignInModal = ({ isOpen, onClose }) => {
                 {isSubmitting ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
                 ) : (
-                  <span>Sign In</span>
+                  <span>{mode === 'signin' ? 'Sign In' : 'Create Account'}</span>
                 )}
               </button>
               
               <p className="text-center text-gray-400 text-sm mt-6">
-                Don't have an account? <a href="#" className="text-teal-500 hover:text-teal-400 font-medium">Apply for access</a>
+                {mode === 'signin' ? (
+                  <>Don't have an account? <a href="#" onClick={toggleMode} className="text-teal-500 hover:text-teal-400 font-medium">Create one now</a></>
+                ) : (
+                  <>Already have an account? <a href="#" onClick={toggleMode} className="text-teal-500 hover:text-teal-400 font-medium">Sign in instead</a></>
+                )}
               </p>
             </form>
           )}
