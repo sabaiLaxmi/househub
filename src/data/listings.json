@@ -1,0 +1,236 @@
+[
+  {
+    "id": "1",
+    "featured": true,
+    "title": "Modern Glass Villa",
+    "type": "Villa",
+    "address": "Palm Jumeirah",
+    "state": "Dubai",
+    "country": "United Arab Emirates",
+    "price": 15000,
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "sqft": 5200,
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+    ],
+    "coordinates": { "lat": 25.1124, "lng": 55.1390 },
+    "description": "Stunning modern villa with panoramic views, infinity pool, and smart home features.",
+    "infrastructure": "Dubai offers world-class infrastructure with ultra-modern highways, an extensive and fully automated Metro system, and some of the largest international airports in the world. The telecommunications networks are cutting-edge, featuring widespread 5G coverage and fiber-optic connectivity. Utilities are highly reliable, and the city boasts spectacular artificial islands, marinas, and towering skyscrapers, supported by robust civic engineering."
+  },
+  {
+    "id": "2",
+    "featured": true,
+    "title": "Oceanfront Estate",
+    "type": "Estate",
+    "address": "Bondi Beach",
+    "state": "New South Wales",
+    "country": "Australia",
+    "price": 25000,
+    "bedrooms": 6,
+    "bathrooms": 7,
+    "sqft": 8500,
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+    ],
+    "coordinates": { "lat": -33.8908, "lng": 151.2743 },
+    "description": "Private beach access, expansive decks, and luxurious amenities in this one-of-a-kind oceanfront property.",
+    "infrastructure": "New South Wales, particularly around Sydney, features an extensive and highly developed public transport network including trains, buses, and ferries. The healthcare system is among the best globally, supported by top-tier hospitals. The road networks are well-maintained, and the region focuses heavily on sustainable energy and green urban planning, making it highly livable."
+  },
+  {
+    "id": "3",
+    "featured": true,
+    "title": "Architectural Masterpiece",
+    "type": "Mansion",
+    "address": "Minato City",
+    "state": "Tokyo",
+    "country": "Japan",
+    "price": 35000,
+    "bedrooms": 5,
+    "bathrooms": 8,
+    "sqft": 12000,
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
+      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=800&q=80"
+    ],
+    "coordinates": { "lat": 35.6581, "lng": 139.7414 },
+    "description": "A true masterpiece featuring a private cinema, wine cellar, and spectacular city lights view.",
+    "infrastructure": "Tokyo's infrastructure is legendary for its efficiency and punctuality. The rail and subway networks are incredibly dense, handling millions of passengers daily with minimal delays. The city is highly earthquake-resilient due to strict building codes and advanced engineering. Cleanliness, high-speed internet, and seamlessly integrated commercial and residential zones make it a marvel of modern urban planning."
+  },
+  {
+    "id": "4",
+    "featured": true,
+    "title": "Historic Mansion",
+    "type": "Mansion",
+    "address": "8th Arrondissement",
+    "state": "Île-de-France",
+    "country": "France",
+    "price": 20000,
+    "bedrooms": 7,
+    "bathrooms": 6,
+    "sqft": 9000,
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800&q=80"
+    ],
+    "coordinates": { "lat": 48.8725, "lng": 2.3126 },
+    "description": "Classic elegance meets modern luxury in this fully renovated historic estate near the Champs-Élysées.",
+    "infrastructure": "The Île-de-France region boasts a deep integration of historical architecture with modern amenities. Paris is supported by a comprehensive public transit system (the Métro and RER), and the high-speed TGV rail connects it rapidly to the rest of Europe. The city has recently heavily invested in cycling infrastructure, transforming major thoroughfares into pedestrian and bike-friendly zones."
+  },
+  {
+    "id": "5",
+    "featured": true,
+    "title": "Contemporary Penthouse",
+    "type": "Penthouse",
+    "address": "Marina Bay",
+    "state": "Central Region",
+    "country": "Singapore",
+    "price": 12000,
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "sqft": 3500,
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "coordinates": { "lat": 1.2834, "lng": 103.8607 },
+    "description": "High-rise luxury with floor-to-ceiling windows, private rooftop terrace, and exclusive building amenities.",
+    "infrastructure": "Singapore is renowned as a 'Smart City', featuring impeccable urban planning. The Mass Rapid Transit (MRT) is exceptionally clean, fast, and covers the entire island. Changi Airport is consistently ranked as the world's best. The city integrates lush greenery into its skyscrapers and maintains highly efficient water management and waste recycling systems."
+  },
+  {
+    "id": "6",
+    "featured": true,
+    "title": "Alpine Retreat",
+    "type": "Villa",
+    "address": "Zermatt",
+    "state": "Valais",
+    "country": "Switzerland",
+    "price": 18500,
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "sqft": 6500,
+    "images": [
+      "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80"
+    ],
+    "coordinates": { "lat": 46.0207, "lng": 7.7491 },
+    "description": "Exquisite alpine villa with views of the Matterhorn, outdoor heated pool, and ski-in/ski-out access.",
+    "infrastructure": "Switzerland's infrastructure is famous for its precision. Despite the challenging mountainous terrain, the train network (SBB) is incredibly reliable, scenic, and deeply integrated with cable cars and buses. The roads and tunnels are engineering masterpieces. The country also relies heavily on clean hydroelectric power, maintaining pristine environmental standards."
+  },
+  {
+    "id": "7",
+    "title": "Skyline Loft",
+    "type": "Penthouse",
+    "address": "Manhattan",
+    "state": "New York",
+    "country": "USA",
+    "price": 8500,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sqft": 2200,
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "coordinates": { "lat": 40.7128, "lng": -74.0060 },
+    "description": "Industrial chic loft with soaring 20ft ceilings, exposed brick, and panoramic city views.",
+    "infrastructure": "New York boasts an extensive, 24/7 subway system that forms the backbone of the city's transport. The infrastructure includes iconic bridges and tunnels connecting the boroughs. While aging in some parts, massive revitalization projects are ongoing, including major airport overhauls (LaGuardia, JFK) and expanding ferry networks."
+  },
+  {
+    "id": "8",
+    "title": "Bavarian Estate",
+    "type": "Estate",
+    "address": "Starnberg",
+    "state": "Bavaria",
+    "country": "Germany",
+    "price": 45000,
+    "bedrooms": 7,
+    "bathrooms": 9,
+    "sqft": 14000,
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+    ],
+    "coordinates": { "lat": 47.9972, "lng": 11.3400 },
+    "description": "The ultimate lakeside compound featuring private boat access, indoor pool, and subterranean garage.",
+    "infrastructure": "Bavaria features outstanding infrastructure, highlighted by the world-famous Autobahn network and the highly efficient Deutsche Bahn rail system. The region is a hub for high-tech industries and automotive engineering, resulting in excellent digital connectivity, well-maintained public spaces, and top-tier healthcare facilities."
+  },
+  {
+    "id": "9",
+    "title": "Tuscan Vineyard",
+    "type": "Estate",
+    "address": "Chianti",
+    "state": "Tuscany",
+    "country": "Italy",
+    "price": 28000,
+    "bedrooms": 6,
+    "bathrooms": 6,
+    "sqft": 8000,
+    "images": [
+      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80",
+      "https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=800&q=80"
+    ],
+    "coordinates": { "lat": 43.4632, "lng": 11.1432 },
+    "description": "A sprawling 40-acre vineyard estate with a working winery, tasting room, and a beautifully restored farmhouse.",
+    "infrastructure": "Tuscany balances historic preservation with modern necessities. While rural roads weave through challenging hilly terrains, they are generally well-maintained for tourism and agriculture. Major cities like Florence are connected by Italy's high-speed rail (Frecciarossa), making travel to Rome or Milan remarkably fast."
+  },
+  {
+    "id": "10",
+    "title": "Desert Oasis",
+    "type": "Villa",
+    "address": "Marrakech",
+    "state": "Marrakech-Safi",
+    "country": "Morocco",
+    "price": 14500,
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "sqft": 4800,
+    "images": [
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80"
+    ],
+    "coordinates": { "lat": 31.6295, "lng": -7.9811 },
+    "description": "Modern masterpiece nestled against the Atlas mountains, featuring zero-edge pool and traditional riad architecture.",
+    "infrastructure": "Morocco has heavily invested in modernizing its infrastructure. It hosts Africa's first high-speed rail line (Al Boraq) connecting Tangier to Casablanca. Marrakech features a modern international airport, expanding highway networks, and significant investments in solar energy, particularly the massive Noor Ouarzazate Solar Complex."
+  },
+  {
+    "id": "11",
+    "title": "Caribbean Villa",
+    "type": "Villa",
+    "address": "Grace Bay",
+    "state": "Providenciales",
+    "country": "Turks & Caicos",
+    "price": 18000,
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "sqft": 7200,
+    "images": [
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80",
+      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800&q=80"
+    ],
+    "coordinates": { "lat": 21.7963, "lng": -72.1760 },
+    "description": "Luxurious beachfront villa featuring an infinity pool and uninterrupted views of the turquoise sea.",
+    "infrastructure": "Providenciales boasts a modern airport with direct flights to major cities. The local infrastructure focuses on supporting luxury tourism, featuring excellent coastal roads, high-end private healthcare facilities, and highly reliable high-speed internet suited for digital nomads."
+  },
+  {
+    "id": "12",
+    "title": "Malibu Mansion",
+    "type": "Mansion",
+    "address": "Carbon Beach",
+    "state": "California",
+    "country": "USA",
+    "price": 42000,
+    "bedrooms": 6,
+    "bathrooms": 8,
+    "sqft": 10500,
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
+    ],
+    "coordinates": { "lat": 34.0381, "lng": -118.6738 },
+    "description": "Iconic Malibu beachfront estate with private sandy beach access, home theater, and spa.",
+    "infrastructure": "Malibu is well connected via the Pacific Coast Highway, offering scenic routes towards Los Angeles. It features premium community services, specialized medical centers, and robust utility networks tailored for expansive coastal estates."
+  }
+]
