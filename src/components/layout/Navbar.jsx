@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Home, Menu, X, User, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ListPropertyModal from './ListPropertyModal';
+import SignInModal from './SignInModal';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -37,7 +39,10 @@ const Navbar = () => {
           <Plus className="w-4 h-4" />
           <span>List Property</span>
         </button>
-        <button className="hidden md:flex items-center gap-2 border border-white/20 hover:border-teal-500 hover:text-teal-500 transition-all rounded-full px-4 py-2 text-sm font-medium">
+        <button 
+          onClick={() => setIsSignInOpen(true)}
+          className="hidden md:flex items-center gap-2 border border-white/20 hover:border-teal-500 hover:text-teal-500 transition-all rounded-full px-4 py-2 text-sm font-medium"
+        >
           <User className="w-4 h-4" />
           <span>Sign In</span>
         </button>
@@ -70,7 +75,13 @@ const Navbar = () => {
             <Plus className="w-5 h-5" />
             <span>List Property</span>
           </button>
-          <button className="flex items-center gap-2 bg-teal-500/10 text-teal-500 border border-teal-500/20 hover:bg-teal-500 hover:text-navy-900 transition-all rounded-full px-6 py-2 font-bold">
+          <button 
+            onClick={() => {
+              setMobileMenuOpen(false);
+              setIsSignInOpen(true);
+            }}
+            className="flex items-center gap-2 bg-teal-500/10 text-teal-500 border border-teal-500/20 hover:bg-teal-500 hover:text-navy-900 transition-all rounded-full px-6 py-2 font-bold"
+          >
             <User className="w-5 h-5" />
             <span>Sign In</span>
           </button>
@@ -78,6 +89,7 @@ const Navbar = () => {
       )}
       
       <ListPropertyModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <SignInModal isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
     </nav>
   );
 };

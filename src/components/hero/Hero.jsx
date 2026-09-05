@@ -84,12 +84,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
-           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
-        <span className="text-xs uppercase tracking-[0.3em] text-white font-medium">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
-      </div>
     </section>
   );
 };
