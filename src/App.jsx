@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ListingsProvider } from './context/ListingsContext';
 import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import { Home } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -58,6 +59,7 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );
