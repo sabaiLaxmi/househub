@@ -6,11 +6,41 @@ const SignInModal = ({ isOpen, onClose }) => {
   const [mode, setMode] = useState('signin'); // 'signin' or 'signup'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
 
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError('');
+
+    if (mode === 'signin') {
+      const users = JSON.parse(localStorage.getItem('propertyHubUsers') || '[]');
+      const user = users.find(u => u.email === email && u.password === password);
+      
+      if (!user) {
+        setError('Invalid credentials or account does not exist. Please create an account first.');
+        return;
+      }
+    } else {
+      if (password !== confirmPassword) {
+        setError('Passwords do not match.');
+        return;
+      }
+      const users = JSON.parse(localStorage.getItem('propertyHubUsers') || '[]');
+      if (users.find(u => u.email === email)) {
+        setError('An account with this email already exists. Please sign in instead.');
+        return;
+      }
+      users.push({ name, email, password });
+      localStorage.setItem('propertyHubUsers', JSON.stringify(users));
+    }
+
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
@@ -18,6 +48,10 @@ const SignInModal = ({ isOpen, onClose }) => {
       setTimeout(() => {
         setIsSuccess(false);
         setMode('signin'); // reset back to signin for next time
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+        setName('');
         onClose();
       }, 2000);
     }, 1500);
@@ -25,6 +59,7 @@ const SignInModal = ({ isOpen, onClose }) => {
 
   const toggleMode = (e) => {
     e.preventDefault();
+    setError('');
     setMode(mode === 'signin' ? 'signup' : 'signin');
   };
 
@@ -67,6 +102,12 @@ const SignInModal = ({ isOpen, onClose }) => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
+              {error && (
+                <div className="p-3 bg-red-500/10 border border-red-500/50 rounded-lg text-red-500 text-sm text-center">
+                  {error}
+                </div>
+              )}
+              
               {mode === 'signup' && (
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
@@ -74,7 +115,14 @@ const SignInModal = ({ isOpen, onClose }) => {
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <UserIcon className="h-5 w-5 text-gray-500" />
                     </div>
-                    <input required type="text" className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" placeholder="John Doe" />
+                    <input 
+                      required 
+                      type="text" 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" 
+                      placeholder="John Doe" 
+                    />
                   </div>
                 </div>
               )}
@@ -85,7 +133,14 @@ const SignInModal = ({ isOpen, onClose }) => {
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <Mail className="h-5 w-5 text-gray-500" />
                   </div>
-                  <input required type="email" className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" placeholder="you@example.com" />
+                  <input 
+                    required 
+                    type="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" 
+                    placeholder="you@example.com" 
+                  />
                 </div>
               </div>
               
@@ -100,7 +155,14 @@ const SignInModal = ({ isOpen, onClose }) => {
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <Lock className="h-5 w-5 text-gray-500" />
                   </div>
-                  <input required type="password" className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" placeholder="••••••••" />
+                  <input 
+                    required 
+                    type="password" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" 
+                    placeholder="••••••••" 
+                  />
                 </div>
               </div>
 
@@ -111,7 +173,14 @@ const SignInModal = ({ isOpen, onClose }) => {
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <Lock className="h-5 w-5 text-gray-500" />
                     </div>
-                    <input required type="password" className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" placeholder="••••••••" />
+                    <input 
+                      required 
+                      type="password" 
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-10 px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors" 
+                      placeholder="••••••••" 
+                    />
                   </div>
                 </div>
               )}
