@@ -13,6 +13,7 @@ import Properties from './pages/Properties';
 import Agents from './pages/Agents';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,7 @@ function AppContent() {
           <Route path="/agents" element={<Agents />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </div>

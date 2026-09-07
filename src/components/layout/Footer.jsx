@@ -128,14 +128,11 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} PropertyHub. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 md:space-x-6 justify-center">
-            <Link to="#" className="hover:text-teal-400 transition-colors">
+            <Link to="/privacy-policy" className="hover:text-teal-400 transition-colors">
               Privacy Policy
             </Link>
             <Link to="#" className="hover:text-teal-400 transition-colors">
               Terms of Service
-            </Link>
-            <Link to="#" className="hover:text-teal-400 transition-colors">
-              Cookie Policy
             </Link>
           </div>
         </div>
