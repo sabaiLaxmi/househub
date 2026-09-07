@@ -1,33 +1,7 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { User, X, Mail, Phone } from 'lucide-react';
-
-const agentsData = [
-  {
-    id: 1,
-    name: "Michael Sterling",
-    title: "Senior Luxury Broker",
-    email: "m.sterling@propertyhub.com",
-    phone: "+1 (555) 123-4567",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
-  },
-  {
-    id: 2,
-    name: "Sarah Jenkins",
-    title: "International Property Specialist",
-    email: "s.jenkins@propertyhub.com",
-    phone: "+1 (555) 987-6543",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"
-  },
-  {
-    id: 3,
-    name: "David Chen",
-    title: "Estates Director",
-    email: "d.chen@propertyhub.com",
-    phone: "+1 (555) 456-7890",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80"
-  }
-];
+import agentsData from '../data/agents.json';
 
 const Agents = () => {
   const [selectedAgent, setSelectedAgent] = useState(null);
