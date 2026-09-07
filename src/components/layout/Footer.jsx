@@ -51,17 +51,23 @@ const Footer = () => {
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-teal-500"></span>
             </h3>
             <ul className="space-y-4">
-              {['Home', 'Properties', 'Agents', 'About Us', 'Contact'].map((item, index) => (
-                <li key={index}>
-                  <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} 
-                    className="text-gray-400 hover:text-teal-400 transition-colors flex items-center group"
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {['Home', 'Properties', 'Agents', 'About Us', 'Contact'].map((item, index) => {
+                let path = `/${item.toLowerCase()}`;
+                if (item === 'Home') path = '/';
+                if (item === 'About Us') path = '/about';
+                
+                return (
+                  <li key={index}>
+                    <Link 
+                      to={path} 
+                      className="text-gray-400 hover:text-teal-400 transition-colors flex items-center group"
+                    >
+                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                      {item}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
